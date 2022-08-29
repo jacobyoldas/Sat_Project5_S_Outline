@@ -4,12 +4,12 @@ Feature: Add New Payee Functionality
     Given User navigate to website
     When User enter valid "username" and "password"
     Then User should login successfully
-
-  Scenario Outline: Add New Payee as positive test
-
     And User navigate to online banking page
     When Click pay bills module
     Then Click add new payee module
+
+  Scenario Outline: Add New Payee as positive test
+
     When User enter "<payeeName>" and "<payeeAddress>"and "<account>" and "<payeeDetails>"
     Then Success message should be displayed
 
@@ -19,11 +19,8 @@ Feature: Add New Payee Functionality
 
   Scenario Outline: Add New Payee as negative test
 
-    And User navigate to online banking page
-    When Click pay bills module
-    Then Click add new payee module
     When User enter "<payeeName>" or "<payeeAddress>" or "<account>" or "<payeeDetails>"
-    Then Driver should be on the same page
+    Then User should be on the same page
 
     Examples:
       | payeeName | payeeAddress | account         | payeeDetails |

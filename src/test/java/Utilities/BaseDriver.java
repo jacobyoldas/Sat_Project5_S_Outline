@@ -10,16 +10,9 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.impl.SimpleLogger;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 
 public class BaseDriver {
-
   public static WebDriver driver;
-
   public static WebDriver setupDriver() {
     if (driver == null) { // always open clean browser
       Logger.getLogger("").setLevel(Level.SEVERE);
@@ -27,7 +20,6 @@ public class BaseDriver {
       System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
       WebDriverManager.chromedriver().setup();
       driver = new ChromeDriver();
-
 //     WebDriverManager.firefoxdriver().setup();
 //     driver=new FirefoxDriver();
     }
@@ -44,7 +36,6 @@ public class BaseDriver {
       driver = null;
     }
   }
-
   public static void threadSleep(int sec) {
     try {
       Thread.sleep(sec * 1000);
