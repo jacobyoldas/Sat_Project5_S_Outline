@@ -19,7 +19,6 @@ public class _03_PurchaseForeignCurrencySteps {
   @When("User enter amount {string}")
   public void userEnterAmount(String currAmount) {
     hp.findAndSend("amountCurr",currAmount);
-    hp.findAndClear(currAmount);
 
   }
   @Then("User select a USD button")
@@ -53,5 +52,11 @@ public class _03_PurchaseForeignCurrencySteps {
   }
   @Then("User did not select a USD button")
   public void userDidNotSelectAUSDButton() {
+  }
+
+  @When("User enter  the amount {string}")
+  public void userEnterTheAmount(String amount) {
+    hp.findAndSend("amountCurr",amount);
+    hp.findAndClear(amount);
   }
 }

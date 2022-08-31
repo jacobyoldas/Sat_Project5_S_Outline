@@ -2,12 +2,12 @@ Feature: Transfer Funds Functionality Test
 
   Background:
     Given User navigate to website
-    When User enter valid "username" and "password"
+    When User enter valid username and password
     Then User should login successfully
     And User navigate to online banking page
     When Click pay bills module
     Then Click transfer funds
-
+  @SmokeTest
   Scenario Outline: Transfer Money & Make Payments as positive test
 
     When User select from account
@@ -21,7 +21,7 @@ Feature: Transfer Funds Functionality Test
     Examples:
       | amount |
       | 13     |
-
+  @Regression
   Scenario Outline: Transfer Money & Make Payments as negative tests
 
     Then Click the continue button

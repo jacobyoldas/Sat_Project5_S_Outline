@@ -2,12 +2,12 @@ Feature: Add New Payee Functionality
 
   Background:
     Given User navigate to website
-    When User enter valid "username" and "password"
+    When User enter valid username and password
     Then User should login successfully
     And User navigate to online banking page
     When Click pay bills module
     Then Click add new payee module
-
+  @Regression
   Scenario Outline: Add New Payee as positive test
 
     When User enter "<payeeName>" and "<payeeAddress>"and "<account>" and "<payeeDetails>"

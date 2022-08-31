@@ -2,12 +2,12 @@ Feature: Purchase Foreign Currency Functionality Test
 
   Background:
     Given User navigate to website
-    When User enter valid "username" and "password"
+    When User enter valid username and password
     Then User should login successfully
     And User navigate to online banking page
     When Click pay bills module
     Then Click purchase foreign currency
-
+@Regression   @SmokeTest
   Scenario Outline: Purchase foreign currency cash as positive test
 
     When User select a currency
@@ -21,14 +21,14 @@ Feature: Purchase Foreign Currency Functionality Test
     Examples:
       | currAmount |
       | 13         |
-
+@SmokeTest
   Scenario Outline: Purchase foreign currency cash as negative tests
 
     When Click purchase button
     And  Alert message should be pop-up
 
     When User did not select a currency
-    When User enter amount "<currAmount>"
+    When User enter  the amount "<currAmount>"
     Then Click calculate the cost
     And  Alert message should be pop-up
 

@@ -16,7 +16,7 @@ public class BaseDriver {
   public static WebDriver setupDriver() {
     if (driver == null) { // always open clean browser
       Logger.getLogger("").setLevel(Level.SEVERE);
-      System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
+      //System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
       System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
       WebDriverManager.chromedriver().setup();
       driver = new ChromeDriver();
